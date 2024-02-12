@@ -36,20 +36,29 @@ function showAll(lista){
             listaElem.push(cardTemp);
             document.getElementById('mainBooks').appendChild(cardTemp);
         });
-        console.log(listaElem);
 }
 //ricerca nascondo quello che non risteppa cpndizione
 document.getElementById('searchKey').addEventListener('keyup',()=>{
-    let query=document.getElementById('searchKey').value;
+    let query=document.getElementById('searchKey').value.toLowerCase();
     if(([...query].length)>3) {
         console.log(query);
         let titolo='';
-        let newList=globalList.filter(book=>(
-            console.log((book.title).includes(query))
-        ))
-
-    }else console.log('non fare niete');
+        let newList=globalList.filter(book=>{
+            titolo=book.title.toLowerCase();
+            return titolo.includes(query)
+        })
+        aggiornaLibri(newList);
+    }
 })
+function aggiornaLibri(lista){
+    let toRemove=document.getElementById('mainBooks').children;
+    for (const iterator of toRemove) {
+        console.log(iterator);
+        iterator.remove();
+    }
+    showAll(lista);
+}
+
 //aggiunta prodotto al carrello (aggiornare badge cambiare caratteristica home )
 function cardCarrello(libro){
     console.log(libro);
