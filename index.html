@@ -22,7 +22,6 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">Carrello</button>
-
           </div>
         </div>
       </nav>
@@ -30,16 +29,17 @@
         <input type="text" id="searchKey" placeholder="Titolo libro">
     </div>
     <div class="container-fluid">
-        <div class="row" id="mainBooks">
-        </div>
+      <div class="row" id="pageBook">
+      </div>
+      <div class="row" id="mainBooks">
+      </div>
     </div>
-
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCart">
   <div class="offcanvas-header">
     <h5 id="offcanvasCart">Carrello</h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
+  <div class="offcanvas-body" id="cartBody">
     <div class="card mb-3">
         <div class="row g-0">
           <div class="col-4">
@@ -48,7 +48,7 @@
           <div class="col-6">
             <div class="card-body">
               <h5 class="card-title">Felicita</h5>
-              <p class="card-text">pippo</p>
+              <p class="card-text">asin</p>
               <p class="card-text"><bold class="text-muted">12,55</bold></p>
             </div>
           </div>
@@ -61,8 +61,10 @@
           </div>
         </div>
       </div>
+  </div>
+  <div class="offcanvas-body">
       <div id="stepBuy" class="mt-2">
-        <h6>Totale: <big>12.99</big></h6>
+        <h6 id="cartTot">Totale: <big>12.99</big></h6>
           <button type="button" class="btn btn-secondary">Acquista</button>
       </div>
   </div>
